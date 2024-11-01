@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-management-lab-cluster
+  namespace: argocd
+spec:
+  project: poc-manifest
+  source:
+    repoURL: https://github.com/skl-pongsit/poc-manifest.git
+    path: pongsit-infra/lab-cluster
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: main
+  syncPolicy:
+    automated: {}

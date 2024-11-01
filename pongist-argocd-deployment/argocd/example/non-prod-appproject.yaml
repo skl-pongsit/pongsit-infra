@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  labels:
+    k8slens-edit-resource-version: v1alpha1
+  name: skilllane-non-prod
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  description: ArgoCD skilllane-non-prod
+  destinations:
+  - namespace: '*'
+    server: https://kubernetes.default.svc
+  - namespace: '*'
+    server: https://34.142.149.143
+  orphanedResources:
+    warn: false
+  sourceRepos:
+  - '*'

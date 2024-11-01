@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    argocd.argoproj.io/instance: skilllane-non-prod-ops
+  name: ns-b2c-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: skilllane-non-prod
+  source:
+    path: application/skilllane-ops/overlay/ns-b2c-dev
+    repoURL: https://github.com/SkillLane/skilllane-non-prod-infra
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: poc-argocd
+  labels:
+    argocd.argoproj.io/instance: skilllane-non-prod-ops
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    path: skl-non-prod/manifests
+    repoURL: https://github.com/skl-pongsit/skl-non-prod.git
+    targetRevision: HEAD
+  sources: []
+  project: skl-non-prod
+  syncPolicy:
+    automated: {}
