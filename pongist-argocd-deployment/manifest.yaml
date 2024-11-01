@@ -21312,7 +21312,7 @@ stringData:
 ---
 apiVersion: v1
 data:
-  redis-password: dm9IY1VFckhxcw==
+  redis-password: UUlicnZJa3VuVQ==
 kind: Secret
 metadata:
   labels:
@@ -21327,8 +21327,8 @@ type: Opaque
 ---
 apiVersion: v1
 data:
-  admin.password: JDJhJDEwJHZCZGg3T005bC5CMWkvbkZ3aUVlOGU4NDNMbHlQbkZiNEhhNjZSMTlUY3F5elVpNVRMb1Iu
-  admin.passwordMtime: MjAyNC0xMS0wMVQxMTo0MDoxMlo=
+  admin.password: JDJhJDEwJC95anhSNDMwYkVRZkFWUEg3bnptSmVsTWw2aUxTUGtILnNwSnd0QmlZT3ZGZGJRdnp4R1Jl
+  admin.passwordMtime: MjAyNC0xMS0wMVQxMTo0MzozNFo=
   clearPassword: dGhpc2lzcGFzc3dvcmQ=
 kind: Secret
 metadata:
@@ -22098,7 +22098,7 @@ spec:
         checksum/configmap: 86bcc953bb473748a3d3dc60b7c11f34e60c93519234d4c37f42e22ada559d47
         checksum/health: aff24913d801436ea469d8d374b2ddb3ec4c43ee7ab24663d5f8ff1a1b6991a9
         checksum/scripts: 560c33ff34d845009b51830c332aa05fa211444d1877d3526d3599be7543aaa5
-        checksum/secret: d4a7fafd255214d0fb2987ab3225f3383f637976222a6739ab268ec229d4e7f7
+        checksum/secret: 838060dbebbc7a7abeffb8c8d485a041170a68776f3d01bbcd36fc994666f672
       labels:
         app.kubernetes.io/component: master
         app.kubernetes.io/instance: argocd

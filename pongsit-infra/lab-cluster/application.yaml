@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-main
+  namespace: argocd
+spec:
+  project: pongsit-infra
+  source:
+    repoURL: https://github.com/skl-pongsit/poc-manifest.git
+    path: pongsit-app/main
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: main
+  syncPolicy:
+    automated: {}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-develop
+  namespace: argocd
+spec:
+  project: pongsit-infra
+  source:
+    repoURL: https://github.com/skl-pongsit/poc-manifest.git
+    path: pongsit-app/develop
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: develop
+  syncPolicy:
+    automated: {}
